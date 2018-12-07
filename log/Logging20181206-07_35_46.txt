@@ -1,0 +1,52 @@
+12월 06, 2018 7:35:46 오전 washfriends.washpos.App createAndShowGUI
+INFO: logging start
+12월 06, 2018 7:35:47 오전 washfriends.washpos.App createAndShowGUI
+INFO: DBManager initialized
+12월 06, 2018 7:35:47 오전 washfriends.washpos.App createAndShowGUI
+INFO: set Layout Parent
+12월 06, 2018 7:35:49 오전 washfriends.washpos.view.WelcomeView <init>
+INFO: Set Layout WelcomeView
+12월 06, 2018 7:35:49 오전 washfriends.washpos.view.SignUpView <init>
+INFO: Set Layout SignUpView
+12월 06, 2018 7:35:51 오전 washfriends.washpos.view.WelcomeView actionPerformed
+INFO: newUser action click
+12월 06, 2018 7:35:53 오전 washfriends.washpos.view.SignUpView actionPerformed
+INFO: Enter action click
+12월 06, 2018 7:36:10 오전 washfriends.washpos.view.SignUpView actionPerformed
+INFO: Enter action click
+12월 06, 2018 7:36:21 오전 washfriends.washpos.view.SignUpView actionPerformed
+INFO: Enter action click
+12월 06, 2018 7:36:21 오전 washfriends.washpos.view.SignUpView actionPerformed
+INFO: PID Check ok
+12월 06, 2018 7:36:33 오전 washfriends.washpos.view.SignUpView actionPerformed
+INFO: Enter action click
+12월 06, 2018 7:36:33 오전 washfriends.washpos.view.SignUpView actionPerformed
+INFO: PID Check ok
+12월 06, 2018 7:36:33 오전 washfriends.washpos.view.SignUpView actionPerformed
+WARNING: No matches between pin and confirm pin.
+12월 06, 2018 7:36:39 오전 washfriends.washpos.view.SignUpView actionPerformed
+INFO: Enter action click
+12월 06, 2018 7:36:39 오전 washfriends.washpos.view.SignUpView actionPerformed
+INFO: PID Check ok
+12월 06, 2018 7:36:39 오전 washfriends.washpos.api.DBManager <init>
+INFO: DBManager userRet initialized
+12월 06, 2018 7:36:39 오전 washfriends.washpos.api.DBManager <init>
+INFO: DBManager initialized
+12월 06, 2018 7:36:39 오전 washfriends.washpos.api.DBManager userExists
+INFO: DBManager userExists
+12월 06, 2018 7:36:39 오전 washfriends.washpos.api.DBManager userExists
+INFO: DBManager userExists finished
+12월 06, 2018 7:36:39 오전 washfriends.washpos.view.SignUpView actionPerformed
+INFO: PIN Check ok
+12월 06, 2018 7:36:52 오전 washfriends.washpos.view.SignUpView actionPerformed
+INFO: Enter action click
+12월 06, 2018 7:36:52 오전 washfriends.washpos.view.SignUpView actionPerformed
+INFO: PID Check ok
+12월 06, 2018 7:36:52 오전 washfriends.washpos.api.DBManager userExists
+INFO: DBManager userExists
+12월 06, 2018 7:36:52 오전 washfriends.washpos.api.DBManager userExists
+INFO: DBManager userExists finished
+12월 06, 2018 7:36:52 오전 washfriends.washpos.view.SignUpView actionPerformed
+INFO: PIN Check ok
+12월 06, 2018 7:37:03 오전 washfriends.washpos.App$2 dispatchKeyEvent
+INFO: DB Destroyed2

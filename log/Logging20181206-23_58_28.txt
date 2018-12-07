@@ -1,0 +1,10 @@
+12월 06, 2018 11:58:28 오후 washfriends.washpos.App createAndShowGUI
+INFO: logging start
+12월 06, 2018 11:58:29 오후 washfriends.washpos.App createAndShowGUI
+INFO: DBManager initialized
+12월 06, 2018 11:58:29 오후 washfriends.washpos.App createAndShowGUI
+INFO: set Layout Parent
+12월 06, 2018 11:58:31 오후 washfriends.washpos.view.WelcomeView <init>
+INFO: Set Layout WelcomeView
+12월 06, 2018 11:58:31 오후 washfriends.washpos.view.SignUpView <init>
+INFO: Set Layout SignUpView

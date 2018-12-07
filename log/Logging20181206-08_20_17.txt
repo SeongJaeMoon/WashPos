@@ -1,0 +1,44 @@
+12월 06, 2018 8:20:17 오전 washfriends.washpos.App createAndShowGUI
+INFO: logging start
+12월 06, 2018 8:20:18 오전 washfriends.washpos.App createAndShowGUI
+INFO: DBManager initialized
+12월 06, 2018 8:20:18 오전 washfriends.washpos.App createAndShowGUI
+INFO: set Layout Parent
+12월 06, 2018 8:20:19 오전 washfriends.washpos.view.WelcomeView <init>
+INFO: Set Layout WelcomeView
+12월 06, 2018 8:20:19 오전 washfriends.washpos.view.SignUpView <init>
+INFO: Set Layout SignUpView
+12월 06, 2018 8:20:21 오전 washfriends.washpos.view.WelcomeView actionPerformed
+INFO: newUser action click
+12월 06, 2018 8:20:22 오전 washfriends.washpos.view.SignUpView actionPerformed
+INFO: Enter action click
+12월 06, 2018 8:20:38 오전 washfriends.washpos.view.SignUpView actionPerformed
+INFO: Enter action click
+12월 06, 2018 8:20:38 오전 washfriends.washpos.view.SignUpView actionPerformed
+INFO: PID Check ok
+12월 06, 2018 8:20:38 오전 washfriends.washpos.api.DBManager <init>
+INFO: DBManager userRet initialized
+12월 06, 2018 8:20:38 오전 washfriends.washpos.api.DBManager <init>
+INFO: DBManager initialized
+12월 06, 2018 8:20:38 오전 washfriends.washpos.view.SignUpView actionPerformed
+INFO: PIN Check ok
+12월 06, 2018 8:20:38 오전 washfriends.washpos.view.SignUpView actionPerformed
+INFO: 5 seconds done
+12월 06, 2018 8:20:38 오전 washfriends.washpos.view.SignUpView actionPerformed
+INFO: false isExists value
+12월 06, 2018 8:20:38 오전 washfriends.washpos.view.SignUpView actionPerformed
+INFO: false User adds
+12월 06, 2018 8:20:38 오전 washfriends.washpos.view.SignUpView$6 actionPerformed
+INFO: waiting for 5 seconds
+12월 06, 2018 8:20:43 오전 washfriends.washpos.view.SignUpView$6 actionPerformed
+INFO: waiting for 5 seconds
+12월 06, 2018 8:20:48 오전 washfriends.washpos.view.SignUpView$6 actionPerformed
+INFO: waiting for 5 seconds
+12월 06, 2018 8:20:53 오전 washfriends.washpos.view.SignUpView$6 actionPerformed
+INFO: waiting for 5 seconds
+12월 06, 2018 8:20:58 오전 washfriends.washpos.view.SignUpView$6 actionPerformed
+INFO: waiting for 5 seconds
+12월 06, 2018 8:21:03 오전 washfriends.washpos.view.SignUpView$6 actionPerformed
+INFO: waiting for 5 seconds
+12월 06, 2018 8:21:09 오전 washfriends.washpos.App$2 dispatchKeyEvent
+INFO: logging finished
