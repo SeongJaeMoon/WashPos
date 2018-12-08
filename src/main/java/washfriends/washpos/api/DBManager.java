@@ -5,6 +5,7 @@ import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.database.*;
+import com.google.firebase.database.DatabaseReference.CompletionListener;
 
 import washfriends.washpos.model.*;
 import washfriends.washpos.App;
@@ -36,11 +37,10 @@ public class DBManager {
 	}
     
     // QUERIES
-
     /**
      * Query if the user exists in the database.
      *
-     * @param id        the student ID to check
+     * @param id        the PID to check
      * @return          true if the user exists, otherwise false.
      */
     public void userExists(final String pid) throws FirebaseException{
@@ -66,9 +66,30 @@ public class DBManager {
         }
     }
     
+    /**
+    * Query if the user exists in the database.
+    * @return          true if the user exists, otherwise false.
+    */
     public boolean pidExists() {
     	return this.isExists;
     }
+    
+    /**
+     * Query user updates in the database.
+     */
+    public void updateUser(String name, String pin) throws FirebaseException {
+		try {
+			User user = new User(name, pin, 0, 0);
+			App.USER = user;
+			userRet.child(name).setValue(new User(pin, 0, 0), new CompletionListener() {
+				public void onComplete(DatabaseError error, DatabaseReference ref) {
+					App.LOGGER.info("DBManager successed updateUser " + ref.getKey());
+				}
+			});
+		}catch(Exception e) {
+			new FirebaseException("DBManager failed updateUser " + e.getMessage());
+		}
+   	}
     
     /**
      * Retrieves the user data from the database given a valid
@@ -78,20 +99,34 @@ public class DBManager {
      * @param pin       the PIN given by the user (to be validate)
      * @return          the user data or null if ID and PIN pair invalid.
      */
-    
-//    if(pin == data.child("pin").getValue(Integer.class)) {
-//		isExists = true;
-//	}else {
-//		isExists = false;
-//	}
-    public User getUser(final String pid, final int pin) {
+    public void getUser(final String pid, final String pin) throws FirebaseException {
         try {
-        	
-        	App.LOGGER.info("DBManager getUser.");
+        	userRet.addListenerForSingleValueEvent(new ValueEventListener() {
+				public void onDataChange(DataSnapshot snapshot) {
+					if(snapshot.exists()) {
+						for(DataSnapshot data : snapshot.getChildren()) {
+							String userPid = data.getValue(String.class);
+							if (pid.equals(userPid)){
+								String userPin = data.child("pin").getValue(String.class);
+								if(pin.equals(userPin)) {
+									int point =  data.child("point").getValue(Integer.class);
+									int cash =  data.child("cash").getValue(Integer.class);
+									App.USER = new User(userPid, userPin, point, cash);
+									App.LOGGER.info("DBManager getUser");
+								}
+							}
+						}
+					}
+				}
+				public void onCancelled(DatabaseError error) {
+					new FirebaseException("DBManager user getUser" + error.getDetails());
+				}
+        		
+        	});
+        	App.LOGGER.info("DBManager successed getUser.");
         } catch (Exception e) {
         	App.LOGGER.warning("DBManager failed getUser " + e.getMessage());
         }
-        return null;
     }
     
     public enum FirebaseRestMethod {	
@@ -101,4 +136,5 @@ public class DBManager {
 		POST,
 		DELETE;
 	}
+
 }

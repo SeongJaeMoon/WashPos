@@ -11,7 +11,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import washfriends.washpos.App;
+import washfriends.washpos.api.DBManager;
+import washfriends.washpos.api.FirebaseException;
+import washfriends.washpos.controller.MultiPanel;
 import washfriends.washpos.controller.MyFont;
+import washfriends.washpos.controller.UIToolbox;
 import washfriends.washpos.uitool.HorizontalButton;
 
 
@@ -26,10 +31,9 @@ public class MyDialog {
 	
 	private MyDialog() {}
 	
-	public MyDialog(final String name) {
+	public MyDialog(final String name, final String pin) {
 		dialog = new JDialog();	
-		Toolkit toolkit = Toolkit.getDefaultToolkit();
-        Dimension screenSize = toolkit.getScreenSize();
+        Dimension screenSize = UIToolbox.getScreenSize();
         dialog.setSize(400, 400);
         JPanel panel = new JPanel(new BorderLayout());
            
@@ -50,7 +54,13 @@ public class MyDialog {
         HorizontalButton okbtn = new HorizontalButton("OK", "OK", "등록");
         okbtn.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
-   				jlabel.setText("OK");
+        		try {
+        			dialog.setVisible(false);
+        			DBManager.DB.updateUser(name, pin);
+        			MultiPanel.SELF.show("HOMEVIEW");
+        		}catch(FirebaseException ex) {
+        			App.LOGGER.warning(ex.getMessage());
+        		}
    			}        	
         });
         HorizontalButton nobtn = new HorizontalButton("NO", "NO","취소");
@@ -82,6 +92,6 @@ public class MyDialog {
 	}
 	
 	public static void main(String [] args) {
-		MyDialog myDialog = new MyDialog("01043180221");
+		MyDialog myDialog = new MyDialog("01043180221", "1234");
 	}
 }

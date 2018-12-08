@@ -62,14 +62,16 @@ public class App {
     				.build();
     		FirebaseApp.initializeApp(options);
         } catch (Exception e) {
-        	App.LOGGER.warning("DBManager failed init " + e.getMessage());
+        	LOGGER.warning("DBManager failed init " + e.getMessage());
         }
-		App.LOGGER.info("DBManager initialized");
+		LOGGER.info("DBManager initialized");
         
         
         LOGGER.info("set Layout Parent");
         MultiPanel.SELF.add(new WelcomeView());
         MultiPanel.SELF.add(new SignUpView());        
+        MultiPanel.SELF.add(new SignInView());  
+        MultiPanel.SELF.add(new HomeView());
         
         frame.pack();
         frame.setVisible(true);

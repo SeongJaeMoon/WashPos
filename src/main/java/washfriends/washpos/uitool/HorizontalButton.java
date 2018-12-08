@@ -56,6 +56,7 @@ public class HorizontalButton extends JButton {
         this(name, icon, label, listener, HEIGHT, -1, false);}
     public HorizontalButton(String name, String icon, String label) {
         this(name, icon, label, null);}
+    
 
     private String getHTML(String icon, String label, int height, boolean rightIcon) {
         String p1, p2;
@@ -64,7 +65,7 @@ public class HorizontalButton extends JButton {
                  .replace("{SIZE}", ""+((int) (((double) height/HEIGHT) * ICON_SIZE)))
                  .replace("{HEIGHT}", ""+height)
                  .replace("{TEXT}", (MyFont.ICONS.containsKey(icon)) ? MyFont.ICONS.get(icon) : " ");
-        p2 = PART.replace("{FONT}", "OpenSansRegular")
+        p2 = PART.replace("{FONT}", "NanumGothic-Regular")
                  .replace("{SIZE}", ""+((int) (((double) height/HEIGHT) * LABEL_SIZE)))
                  .replace("{HEIGHT}", ""+height)
                  .replace("{TEXT}", label);
@@ -74,7 +75,6 @@ public class HorizontalButton extends JButton {
     }
 
     // FOR TESTING PURPOSES ONLY
-
     public static void main(String[] args) {
         UITheme.setLookAndFeel();
         JFrame frame = new JFrame();
@@ -87,10 +87,11 @@ public class HorizontalButton extends JButton {
         frame.add(new HorizontalButton("HOME", "HOME", "Home", al));
         frame.add(new HorizontalButton("BACK", "BACK", "Back", al));
         frame.add(new HorizontalButton("PREV", "PREV", "Prev", al, 200));
-        //frame.add(new PageCounter(5, 10, 400));
+//        frame.add(new PageCounter(5, 10, 400));
         frame.add(new HorizontalButton("NEXT", "NEXT", "Next", al, 200, true));
         frame.add(new HorizontalButton("CONTINUE", "FORW", "Continue", al, true));
         frame.add(new HorizontalButton("EXIT", "EXIT", "Exit", al, true));
+        frame.add(new HorizontalButton("GOOD", "GOOD", "Good", al, true));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);

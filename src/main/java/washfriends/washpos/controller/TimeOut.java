@@ -2,6 +2,8 @@ package washfriends.washpos.controller;
 
 import java.util.*;
 
+import javax.swing.JLabel;
+
 /**
  * This class implements the timeout handler
  * for set a timeout given a completion runnable
@@ -30,15 +32,16 @@ public class TimeOut extends TimerTask{
         this.timer.scheduleAtFixedRate(this, 0, REFRESH_RATE);
         return this;
     }
-
+    
     public void stop() {
         timer.cancel();
         reset();
     }
-
+    
     public void reset() {
         this.time = 0;
     }
+    
 	@Override
 	public void run() {
 		if (duration <= time) {
@@ -47,6 +50,5 @@ public class TimeOut extends TimerTask{
         } else {
             time += REFRESH_RATE;
         }
-	}
-
+	} 
 }

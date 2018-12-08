@@ -43,7 +43,7 @@ public class InitView extends JPanel implements ActionListener {
     public boolean prepareView(Object... args) {
         if (App.USER == null) {
             MultiPanel.SELF.show("WELCOME");
-            //MultiPanel.SELF.show("LOGIN");
+            // MultiPanel.SELF.show("LOGIN");
             return false;
         }
         // TITLE.setUserTag(App.USER);
@@ -57,7 +57,6 @@ public class InitView extends JPanel implements ActionListener {
             if (App.USER.logout()) {
                 App.USER = null;
                 MultiPanel.SELF.show("WELCOME");
-                // MultiPanel.SELF.show("LOGIN");
             }
         } else {
             MultiPanel.SELF.show(name);

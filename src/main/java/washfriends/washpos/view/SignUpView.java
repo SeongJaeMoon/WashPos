@@ -1,12 +1,9 @@
 package washfriends.washpos.view;
 
 import java.awt.BorderLayout;
-import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import java.awt.Toolkit;
 import java.awt.event.*;
 
 import javax.swing.*;
@@ -30,10 +27,8 @@ public class SignUpView extends InitView {
 	private final JPasswordField CONFIRM_PIN; 	// Confirm access PIN field
 	private final InputField CONFIRM_PIN_FIELD; // input filed for confirm user PIN
 	private JLabel label;
-	// No reaction waiting time
-	private TimeOut timeout = null;
-	// Server reaction waiting time  
-	private TimeOut timer = null;
+	private TimeOut timeout = null; 			// No reaction waiting time
+	private TimeOut timer = null;				// Server reaction waiting time  
 	private MyDialog dialog = null;
 	
 	public SignUpView() {
@@ -151,7 +146,7 @@ public class SignUpView extends InitView {
     	JButton button = (JButton)e.getSource();
         String name = button.getName();
         if(name.equals("ENTER")) {
-        	App.LOGGER.info("Enter action click");
+        	App.LOGGER.info("SignUp enter action click");
         	try {
         		// PID check
 	        	final String username = new String(USER.getText());
@@ -184,7 +179,7 @@ public class SignUpView extends InitView {
 			   		    	            }else {
 			   		    	            	// User adds
 			   		    	            	App.LOGGER.info(isExists ? "true" : "false" + " User adds");
-			   		    	            	dialog = new MyDialog(username);
+			   		    	            	dialog = new MyDialog(username, password);
 			   		    	            }
 			                        }
 			                    }, 5 * 1000).start();
